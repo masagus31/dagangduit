@@ -70,7 +70,7 @@ module.exports = sansekai = async (client, m, chatUpdate, store) => {
         // Push Message To Console
         let argsLog = (budy.length > 30) ? `${q.substring(0, 30)}...` : budy
 
-        if (autoAI) {
+        if (setting.autoAI) {
             // Push Message To Console && Auto Read
             if (argsLog && !m.isGroup) {
                 // client.sendReadReceipt(m.chat, m.sender, [m.key.id])
@@ -79,7 +79,7 @@ module.exports = sansekai = async (client, m, chatUpdate, store) => {
                 // client.sendReadReceipt(m.chat, m.sender, [m.key.id])
                 console.log(chalk.black(chalk.bgWhite('[ LOGS ]')), color(argsLog, 'turquoise'), chalk.magenta('From'), chalk.green(pushname), chalk.yellow(`[ ${m.sender.replace('@s.whatsapp.net', '')} ]`), chalk.blueBright('IN'), chalk.green(groupName))
             }
-        } else if (!autoAI) {
+        } else if (!setting.autoAI) {
             if (isCmd2 && !m.isGroup) {
                 console.log(chalk.black(chalk.bgWhite('[ LOGS ]')), color(argsLog, 'turquoise'), chalk.magenta('From'), chalk.green(pushname), chalk.yellow(`[ ${m.sender.replace('@s.whatsapp.net', '')} ]`))
             } else if (isCmd2 && m.isGroup) {
@@ -88,7 +88,7 @@ module.exports = sansekai = async (client, m, chatUpdate, store) => {
         }
 
 
-        if (autoAI) {
+        if (setting.autoAI) {
             if (budy) {
                 try {
                     if (setting.keyopenai === 'API_KEY_OPENAI') return reply('Apikey belum diisi\n\nSilahkan isi terlebih dahulu apikeynya di file key.json\n\nApikeynya bisa dibuat di website: https://beta.openai.com/account/api-keys')
@@ -196,7 +196,7 @@ module.exports = sansekai = async (client, m, chatUpdate, store) => {
             }
         }
 
-        if (!autoAI) {
+        if (!setting.autoAI) {
             if (isCmd2) {
                 switch (command) {
                     case 'ai':
