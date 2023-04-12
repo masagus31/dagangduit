@@ -4,7 +4,7 @@ const util = require('util')
 const chalk = require('chalk')
 const { Configuration, OpenAIApi } = require("openai")
 const apiKey = process.env.API_KEY_OPENAI;
-console.log(apiKey);
+        console.log(apiKey);
 let setting = require('dotenv').config();
 const BOT_NAME = process.env.BOT_NAME || "Lily Shania";
 // const autoAI = process.env.autoAI || "True";
