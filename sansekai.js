@@ -3,8 +3,38 @@ const fs = require('fs')
 const util = require('util')
 const chalk = require('chalk')
 const { Configuration, OpenAIApi } = require("openai")
-let setting = require('./accesser.json')
-const BOT_NAME = process.env.BOT_NAME ?? "Lily Shania";
+require('dotenv').config();
+const apiKey = process.env.API_KEY_OPENAI;
+console.log(apiKey);
+
+const BOT_NAME = process.env.BOT_NAME || "Lily Shania";
+const autoAI = process.env.autoAI || "True";
+
+// const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = require('@adiwajshing/baileys')
+// const fs = require('fs')
+// const util = require('util')
+// const chalk = require('chalk')
+// const { Configuration, OpenAIApi } = require("openai")
+// require('dotenv').config();
+// let apiKey = process.env.API_KEY_OPENAI;
+// console.log(apiKey);
+
+// const BOT_NAME = process.env.BOT_NAME ?? "Lily Shania";
+// const autoAI = process.env.autoAI ?? "True";
+
+
+
+// const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = require('@adiwajshing/baileys')
+// const fs = require('fs')
+// const util = require('util')
+// const chalk = require('chalk')
+// const { Configuration, OpenAIApi } = require("openai")
+// const apiKey = process.env.API_KEY_OPENAI;
+// console.log(apiKey);
+// const BOT_NAME = process.env.BOT_NAME ?? "Lily Shania";
+// const autoAI = process.env.autoAI ?? "true";
+// let setting = { autoAI: true };
+
 
 module.exports = sansekai = async (client, m, chatUpdate, store) => {
     try {
@@ -40,7 +70,7 @@ module.exports = sansekai = async (client, m, chatUpdate, store) => {
         // Push Message To Console
         let argsLog = (budy.length > 30) ? `${q.substring(0, 30)}...` : budy
 
-        if (setting.autoAI) {
+        if (autoAI) {
             // Push Message To Console && Auto Read
             if (argsLog && !m.isGroup) {
                 // client.sendReadReceipt(m.chat, m.sender, [m.key.id])
@@ -49,7 +79,7 @@ module.exports = sansekai = async (client, m, chatUpdate, store) => {
                 // client.sendReadReceipt(m.chat, m.sender, [m.key.id])
                 console.log(chalk.black(chalk.bgWhite('[ LOGS ]')), color(argsLog, 'turquoise'), chalk.magenta('From'), chalk.green(pushname), chalk.yellow(`[ ${m.sender.replace('@s.whatsapp.net', '')} ]`), chalk.blueBright('IN'), chalk.green(groupName))
             }
-        } else if (!setting.autoAI) {
+        } else if (!autoAI) {
             if (isCmd2 && !m.isGroup) {
                 console.log(chalk.black(chalk.bgWhite('[ LOGS ]')), color(argsLog, 'turquoise'), chalk.magenta('From'), chalk.green(pushname), chalk.yellow(`[ ${m.sender.replace('@s.whatsapp.net', '')} ]`))
             } else if (isCmd2 && m.isGroup) {
@@ -58,13 +88,10 @@ module.exports = sansekai = async (client, m, chatUpdate, store) => {
         }
 
 
-
-
-
-        if (setting.autoAI) {
+        if (autoAI) {
             if (budy) {
                 try {
-                    if (setting.keyopenai === 'ISI_APIKEY_OPENAI_DISINI') return reply('Apikey belum diisi\n\nSilahkan isi terlebih dahulu apikeynya di file key.json\n\nApikeynya bisa dibuat di website: https://beta.openai.com/account/api-keys')
+                    if (setting.keyopenai === 'API_KEY_OPENAI') return reply('Apikey belum diisi\n\nSilahkan isi terlebih dahulu apikeynya di file key.json\n\nApikeynya bisa dibuat di website: https://beta.openai.com/account/api-keys')
                     const configuration = new Configuration({
                         apiKey: setting.keyopenai,
                     });
@@ -169,12 +196,12 @@ module.exports = sansekai = async (client, m, chatUpdate, store) => {
             }
         }
 
-        if (!setting.autoAI) {
+        if (!autoAI) {
             if (isCmd2) {
                 switch (command) {
                     case 'ai':
                         try {
-                            if (setting.keyopenai === 'ISI_APIKEY_OPENAI_DISINI') return reply('Api key has not been filled in\n\nPlease fill in the apikey first in the key.json file\n\nThe apikey can be created in website: https://beta.openai.com/account/api-keys')
+                            if (setting.keyopenai === 'API_KEY_OPENAI') return reply('Api key has not been filled in\n\nPlease fill in the apikey first in the key.json file\n\nThe apikey can be created in website: https://beta.openai.com/account/api-keys')
                             if (!text) return reply(`Chat dengan AI.\n\nContoh:\n${prefix}${command} Apa itu resesi`)
                             const configuration = new Configuration({
                                 apiKey: setting.keyopenai,
