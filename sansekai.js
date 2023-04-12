@@ -7,7 +7,7 @@ const apiKey = process.env.API_KEY_OPENAI;
 console.log(apiKey);
 let setting = require('dotenv').config();
 const BOT_NAME = process.env.BOT_NAME || "Lily Shania";
-const autoAI = process.env.autoAI || "True";
+// const autoAI = process.env.autoAI || "True";
 
 
 // const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = require('@adiwajshing/baileys')
