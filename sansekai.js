@@ -9,13 +9,6 @@ let setting = require('dotenv').config();
 const BOT_NAME = process.env.BOT_NAME || "Lily Shania";
 const autoAI = process.env.autoAI || "True";
 
-const express = require('express');
-const app = express();
-const port = process.env.PORT || 3000;
-
-app.listen(port, () => {
-  console.log(`Server started on port ${port}`);
-});
 
 // const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = require('@adiwajshing/baileys')
 // const fs = require('fs')
