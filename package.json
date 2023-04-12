@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "start": "node index.js"
+    "start": "npm i -g pm2 && pm2 start index.js && pm2 save && pm2 logs"
   },
   "keywords": [
     "termux",
@@ -35,6 +35,7 @@
     "pino": "^7.0.5",
     "qrcode-terminal": "^0.12.0",
     "util": "^0.12.4"
+    "dotenv" "^10.0.0"
   },
   "directories": {
     "lib": "lib",
