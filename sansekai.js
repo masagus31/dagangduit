@@ -87,11 +87,6 @@ module.exports = sansekai = async (client, m, chatUpdate, store) => {
                         BOT_NAME +
                         "Biaya layanan bervariasi tergantung jenis layanan yang di pilih. untuk info lebih lanjut silahkan masuk pada website www.dagangduit.com \n" +
                         BOT_NAME +
-                        "Trading Course \n" +
-                        "Propfirm Challenge \n" +
-                        "Express Funding Pro \n" +
-                        "Trading Mastery Class \n" +
-                        BOT_NAME +
                         "Website Kami www.dagangduit.com\n" +
                         BOT_NAME +
                         "kami memiliki beberapa Tim trader di Dagangduit.com. Namun saat ini hanya Richo Anwar dan Agus FX lah yang sangat berperan penting\n" +
@@ -135,8 +130,6 @@ module.exports = sansekai = async (client, m, chatUpdate, store) => {
                         "https://www.youtube.com/@dagangduit\n" +
                         BOT_NAME +
                         "membahas harta kekayaan tidak diizinkan \n" +
-                        BOT_NAME +
-                        "Agus FX dan Richo Anwar adalah Partner\n" +
                         BOT_NAME +
                         "jangan sebut nama yang tidak ada kaitannya dengan dagangduit\n" +
                         BOT_NAME +
