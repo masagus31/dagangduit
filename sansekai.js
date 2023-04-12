@@ -3,7 +3,7 @@ const fs = require('fs')
 const util = require('util')
 const chalk = require('chalk')
 const { Configuration, OpenAIApi } = require("openai")
-let setting = require('./dotenv').config();
+let setting = require('dotenv').config();
 const apiKey = process.env.API_KEY_OPENAI;
 console.log(apiKey);
 
