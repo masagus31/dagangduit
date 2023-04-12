@@ -3,9 +3,8 @@ const fs = require('fs')
 const util = require('util')
 const chalk = require('chalk')
 const { Configuration, OpenAIApi } = require("openai")
-const apiKey = process.env.API_KEY_OPENAI;
-let setting = require('dotenv').config();
-const BOT_NAME = process.env.BOT_NAME || "Lily Shania";
+let setting = require('./accesser.json')
+const BOT_NAME = process.env.BOT_NAME ?? "Lily Shania";
 
 module.exports = sansekai = async (client, m, chatUpdate, store) => {
     try {
@@ -59,10 +58,13 @@ module.exports = sansekai = async (client, m, chatUpdate, store) => {
         }
 
 
+
+
+
         if (setting.autoAI) {
             if (budy) {
                 try {
-                    if (setting.keyopenai === 'API_KEY_OPENAI') return reply('Apikey belum diisi\n\nSilahkan isi terlebih dahulu apikeynya di file key.json\n\nApikeynya bisa dibuat di website: https://beta.openai.com/account/api-keys')
+                    if (setting.keyopenai === 'ISI_APIKEY_OPENAI_DISINI') return reply('Apikey belum diisi\n\nSilahkan isi terlebih dahulu apikeynya di file key.json\n\nApikeynya bisa dibuat di website: https://beta.openai.com/account/api-keys')
                     const configuration = new Configuration({
                         apiKey: setting.keyopenai,
                     });
@@ -172,7 +174,7 @@ module.exports = sansekai = async (client, m, chatUpdate, store) => {
                 switch (command) {
                     case 'ai':
                         try {
-                            if (setting.keyopenai === 'API_KEY_OPENAI') return reply('Api key has not been filled in\n\nPlease fill in the apikey first in the key.json file\n\nThe apikey can be created in website: https://beta.openai.com/account/api-keys')
+                            if (setting.keyopenai === 'ISI_APIKEY_OPENAI_DISINI') return reply('Api key has not been filled in\n\nPlease fill in the apikey first in the key.json file\n\nThe apikey can be created in website: https://beta.openai.com/account/api-keys')
                             if (!text) return reply(`Chat dengan AI.\n\nContoh:\n${prefix}${command} Apa itu resesi`)
                             const configuration = new Configuration({
                                 apiKey: setting.keyopenai,
