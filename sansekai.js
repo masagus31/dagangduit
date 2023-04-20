@@ -64,7 +64,7 @@ module.exports = sansekai = async (client, m, chatUpdate, store) => {
         if (setting.autoAI) {
             if (budy) {
                 try {
-                    if (setting.keyopenai === 'API_KEY_OPENAI') return reply('Apikey belum diisi\n\nSilahkan isi terlebih dahulu apikeynya di file key.json\n\nApikeynya bisa dibuat di website: https://beta.openai.com/account/api-keys')
+                    if (setting.keyopenai === API_KEY_OPENAI) return reply('Apikey belum diisi\n\nSilahkan isi terlebih dahulu apikeynya di file key.json\n\nApikeynya bisa dibuat di website: https://beta.openai.com/account/api-keys')
                     const configuration = new Configuration({
                         apiKey: setting.keyopenai,
                     });
