@@ -3,7 +3,7 @@ const fs = require('fs')
 const util = require('util')
 const chalk = require('chalk')
 const { Configuration, OpenAIApi } = require("openai")
-let setting = require('./.env.API_KEY_OPENAI')
+let setting = require('./acceser.json')
 const BOT_NAME = process.env.BOT_NAME ?? "Lily Shania";
 
 module.exports = sansekai = async (client, m, chatUpdate, store) => {
