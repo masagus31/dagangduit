@@ -7,10 +7,7 @@ let setting = {
   "keyopenai": process.env.API_KEY_OPENAI,
   "autoAI": true
 }
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server started on port ${PORT}`);
-});
+
 //let setting = require ('./accesser.json')
 const BOT_NAME = process.env.BOT_NAME ?? "Lily Shania";
 
