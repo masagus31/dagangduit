@@ -1,4 +1,4 @@
 {
-	"keyopenai": "process.env.API_KEY_OPENAI",
+	"keyopenai": "API_KEY_OPENAI",
 	"autoAI": true
 }
