@@ -7,32 +7,12 @@ let setting = {
   "keyopenai": process.env.API_KEY_OPENAI,
   "autoAI": true
 }
-
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
 });
-
 //let setting = require ('./accesser.json')
 const BOT_NAME = process.env.BOT_NAME ?? "Lily Shania";
-
-module.exports = app
-
-// const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = require('@adiwajshing/baileys')
-// const fs = require('fs')
-// const util = require('util')
-// const chalk = require('chalk')
-// const { Configuration, OpenAIApi } = require("openai")
-// let setting = {
-//   "keyopenai": process.env.API_KEY_OPENAI,
-//   "autoAI": true
-// }
-// const PORT = process.env.PORT || 3000;
-// app.listen(PORT, () => {
-//   console.log(`Server started on port ${PORT}`);
-// });
-// //let setting = require ('./accesser.json')
-// const BOT_NAME = process.env.BOT_NAME ?? "Lily Shania";
 
 module.exports = sansekai = async (client, m, chatUpdate, store) => {
     try {
@@ -99,9 +79,9 @@ module.exports = sansekai = async (client, m, chatUpdate, store) => {
                     const openai = new OpenAIApi(configuration);
 
                     let prompt_template =
-                        "Saya adalah Robot" +
+                        "Saya adalah " +
                         BOT_NAME +
-                        "dikembangkan oleh Core Team Dagangduit.com\n\nHuman: Hai. Apa kabar?\n" +
+                        " Robot Wanita yang dikembangkan oleh Core Team Dagangduit.com\n\nHuman: Hai. Apa kabar?\n" +
                         BOT_NAME +
                         ":Aku baik. Apa yang bisa saya bantu?\nHuman: " +
                         BOT_NAME +
