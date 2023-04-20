@@ -218,6 +218,13 @@ module.exports = sansekai = async (client, m, chatUpdate, store) => {
     }
 }
 
+const port = process.env.PORT || 3000;
+setTimeout(function() {
+  app.listen(port, () => {
+    console.log(`Server started on port ${port}`);
+  });
+}, 5000); // wait 5 seconds before binding to PORT
+
 
 let file = require.resolve(__filename)
 fs.watchFile(file, () => {
