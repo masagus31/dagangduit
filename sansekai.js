@@ -6,13 +6,6 @@ const { Configuration, OpenAIApi } = require("openai")
 let setting = require ('./accesser.json')
 const BOT_NAME = process.env.BOT_NAME ?? "Lily Shania";
 
-const port = process.env.PORT || 3000;
-setTimeout(function() {
-  dagangduit.listen(port, () => {
-    console.log(`Server started on port ${port}`);
-  });
-}, 5000); // wait 5 seconds before binding to PORT
-
 module.exports = sansekai = async (client, m, chatUpdate, store) => {
     try {
         var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype === 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ''
@@ -71,7 +64,7 @@ module.exports = sansekai = async (client, m, chatUpdate, store) => {
         if (setting.autoAI) {
             if (budy) {
                 try {
-                    if (setting.keyopenai === '${{ secrets.API_KEY_OPENAI }}') return reply('Apikey belum diisi\n\nSilahkan isi terlebih dahulu apikeynya di file key.json\n\nApikeynya bisa dibuat di website: https://beta.openai.com/account/api-keys')
+                    if (setting.keyopenai === 'API_KEY_OPENAI') return reply('Apikey belum diisi\n\nSilahkan isi terlebih dahulu apikeynya di file key.json\n\nApikeynya bisa dibuat di website: https://beta.openai.com/account/api-keys')
                     const configuration = new Configuration({
                         apiKey: setting.keyopenai,
                     });
@@ -179,7 +172,7 @@ module.exports = sansekai = async (client, m, chatUpdate, store) => {
                 switch (command) {
                     case 'ai':
                         try {
-                            if (setting.keyopenai === '${{ secrets.API_KEY_OPENAI }}') return reply('Api key has not been filled in\n\nPlease fill in the apikey first in the key.json file\n\nThe apikey can be created in website: https://beta.openai.com/account/api-keys')
+                            if (setting.keyopenai === 'API_KEY_OPENAI}') return reply('Api key has not been filled in\n\nPlease fill in the apikey first in the key.json file\n\nThe apikey can be created in website: https://beta.openai.com/account/api-keys')
                             if (!text) return reply(`Chat dengan AI.\n\nContoh:\n${prefix}${command} Apa itu resesi`)
                             const configuration = new Configuration({
                                 apiKey: setting.keyopenai,
