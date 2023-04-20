@@ -1,17 +1,9 @@
-import { Configuration, OpenAIApi } from "openai";
-const configuration = new Configuration({
-    organization: "org-3gVvnfwylWLN1ljRNzPqSTgl",
-    apiKey: process.env.API_KEY_OPENAI,
-});
-const openai = new OpenAIApi(configuration);
-const response = await openai.listEngines();
-
 const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = require('@adiwajshing/baileys')
 const fs = require('fs')
 const util = require('util')
 const chalk = require('chalk')
 const { Configuration, OpenAIApi } = require("openai")
-let setting = require('./accesser.json')
+let setting = require(process.env.API_KEY_OPENAI')
 const BOT_NAME = process.env.BOT_NAME ?? "Lily Shania";
 
 module.exports = sansekai = async (client, m, chatUpdate, store) => {
