@@ -1,4 +1,4 @@
 {
-	"keyopenai": "API_KEY_OPENAI",
+	"keyopenai": "${{ secrets.API_KEY_OPENAI }}",
 	"autoAI": true
 }
