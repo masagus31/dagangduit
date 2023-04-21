@@ -1,1 +1,1 @@
-web: npm start --timeout 120000
+web: npm start
