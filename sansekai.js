@@ -226,8 +226,8 @@ module.exports = sansekai = async (client, m, chatUpdate, store) => {
     }
 }
 
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
+server.listen(port, function () => {
+  console.log( 'Server listening on *: + port');
 });
 
 let file = require.resolve(__filename)
