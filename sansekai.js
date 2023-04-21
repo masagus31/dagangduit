@@ -226,8 +226,8 @@ module.exports = sansekai = async (client, m, chatUpdate, store) => {
     }
 }
 
-server.listen(port, function () => {
-  console.log( 'Server listening on *: + port');
+dagangduit.listen(PORT, function () => {
+  console.log('Server listening on *: + PORT');
 });
 
 let file = require.resolve(__filename)
