@@ -3,6 +3,9 @@ const fs = require('fs')
 const util = require('util')
 const chalk = require('chalk')
 const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${PORT}`)
+})
 const { Configuration, OpenAIApi } = require("openai")
 let setting = {
   "keyopenai": process.env.API_KEY_OPENAI,
