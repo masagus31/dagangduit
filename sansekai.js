@@ -1,7 +1,3 @@
-const http = require('http');
-const server = http.createServer();
-server.listen(port, () => console.log(`Server berjalan di port ${port}`));
-
 const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = require('@adiwajshing/baileys')
 const fs = require('fs')
 const util = require('util')
@@ -16,8 +12,7 @@ let setting = {
 //let setting = require ('./accesser.json')
 const BOT_NAME = process.env.BOT_NAME ?? "Lily Shania";
 
-module.exports = sansekai = async (client, m, chatUpdate, store, server) => {
-// module.exports = sansekai = async (client, m, chatUpdate, store) => {
+module.exports = sansekai = async (client, m, chatUpdate, store) => {
     try {
         var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype === 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ''
         var budy = (typeof m.text == 'string' ? m.text : '')
@@ -34,9 +29,7 @@ module.exports = sansekai = async (client, m, chatUpdate, store, server) => {
         const arg1 = arg.trim().substring(arg.indexOf(' ') + 1)
 
         console.log(m);
-        const port = process.env.PORT || 3000
-        server.listen(port, () => console.log(`Server berjalan di port ${port}`));
-      
+    
         const from = m.chat
         const reply = m.reply
         const sender = m.sender
