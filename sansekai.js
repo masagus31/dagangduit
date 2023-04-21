@@ -2,7 +2,7 @@ const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, g
 const fs = require('fs')
 const util = require('util')
 const chalk = require('chalk')
-const port = require ('./.env')
+const port = process.env.PORT || 3000
 const { Configuration, OpenAIApi } = require("openai")
 let setting = {
   "keyopenai": process.env.API_KEY_OPENAI,
