@@ -1,1 +1,1 @@
-web: timeout 300s npm start
+web: timeout 300s npm start $PORT
